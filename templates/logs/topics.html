@@ -8,12 +8,23 @@
     <title>All topics</title>
 </head>
 <body>
+
     <section class="topics">
-        {% for topic in topics%}
-            <p>{{topic}}</p>
-        {%empty%}
-            <p>No topics exist</p>
-        {%endfor%}
+
+        <h1 class="page-title">Topics</h1>
+
+        <ul>
+            {% for topic in topics%}
+                <li>
+                    <a href="{% url 'logs:topic' topic.id%}">{{topic}}</a>
+                </li>
+            {%empty%}
+                <li>No topics exist</li>
+            {%endfor%}
+
+        </ul>
+        <a href="">+ new topic</a>
+
     </section>
 </body>
 </html>

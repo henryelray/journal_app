@@ -1,19 +1,18 @@
 <!doctype html>
+{%extends 'logs/base.html'%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome</title>
+
+    <title>{{topic}}</title>
 </head>
-{%extends 'logs/base.html'%}
+
 <body>
 {%block content%}
-    <main class="wrapper">
-        <p class="page-title">Welcome to the Learning Log App</p>
-    </main>
-
+    <p class="page-title">{{topic}}</p>
 {%endblock content%}
 </body>
 </html>
