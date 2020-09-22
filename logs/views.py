@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Topic, Entry
 from .forms import TopicForm, EntryForm
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
@@ -10,6 +12,7 @@ def index(request):
     return render(request, 'logs/index.html')
 
 
+@login_required
 def topics(request):
     """Displays all existing topics"""
 
@@ -20,6 +23,7 @@ def topics(request):
     return render(request, 'logs/topics.html', context)
 
 
+@login_required
 def topic(request, topic_id):
     """Display a specific topic with its associated entries"""
 
@@ -32,6 +36,7 @@ def topic(request, topic_id):
     return render(request, 'logs/topic.html', context)
 
 
+@login_required
 def new_topic(request):
     """Add a new topic"""
 
@@ -50,6 +55,7 @@ def new_topic(request):
     return render(request, 'logs/new_topic.html', context)
 
 
+@login_required
 def new_entry(request, topic_id):
     """Add a new entry"""
 
@@ -73,6 +79,7 @@ def new_entry(request, topic_id):
     return render(request, 'logs/new_entry.html', context)
 
 
+@login_required
 def edit_entry(request, entry_id):
     """Edit an entry"""
 
