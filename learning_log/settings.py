@@ -24,18 +24,18 @@ import environ
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY =
 
-env = environ.Env(
+# env = environ.Env(
+#
+#     # set casting, default value
+#     DEBUG=(bool, False)
+# )
+# # reading .env file
+# environ.Env.read_env()
 
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-# reading .env file
-environ.Env.read_env()
-
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY =  os.environ.get('SECRET_KEY','%mh&wvowp3)(jqhstz0e5iv7a@_v9)xttag7z)n015h9n7^bt0')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
