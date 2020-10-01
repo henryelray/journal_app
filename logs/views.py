@@ -107,4 +107,16 @@ def edit_entry(request, entry_id):
     return render(request, 'logs/edit_entry.html', context)
 
 
+def delete_entry(request, entry_id):
+
+    entry = Entry.objects.get(id=entry_id)
+    if request.method == 'POST':
+        entry.delete()
+        return redirect('logs:topics')
+
+    context = {'entry':entry}
+    return render(request, 'logs/delete_entry.html', context)
+
+
+
 
