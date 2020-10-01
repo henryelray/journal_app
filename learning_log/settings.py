@@ -44,6 +44,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apps
     'logs',
+    'users',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,3 +132,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+LOGIN_URL = 'users:login'
+
+# heroku settings
+import django_heroku
+django_heroku.settings(locals())

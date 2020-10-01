@@ -143,3 +143,4 @@ cython_debug/
 .idea
 venv
 __pycache__
+*.sqlite3
