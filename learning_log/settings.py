@@ -32,7 +32,7 @@ env = environ.Env(
 # reading .env file
 environ.Env.read_env()
 
-SECRET_KEY = env.str('SECRET_KEY')
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
