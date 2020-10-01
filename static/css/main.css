@@ -32,3 +32,95 @@ margin:5em auto;
 font-size:2em;
 padding-left:2em;
 }
+.form-container{
+width:25%;
+height:auto;
+border:1px solid #eee;
+margin: 4em auto;
+}
+form{
+padding:1em;
+}
+.submit-btn, input{
+width:100%;
+padding:8px 20px;
+margin:8px 0;
+}
+.form-title p{
+text-align:center;
+background-color:#417690;
+margin-top:0;
+height:50px;
+padding-top:1em;
+color:#fff;
+}
+.submit-btn{
+background-color:#417690;
+border:none;
+margin:0;
+color:#fff;
+}
+.entry-form{
+width:40%;
+height:350px;
+border:1px solid #eee;
+margin: 5em auto;
+}
+textarea{
+width:100%;
+height:180px;
+}
+.entry-list li {
+border: 0.5px solid #2097d1;
+box-shadow: 0.5px 0.5px 0.5px #ccc;
+max-width:1170px;
+margin:1.2em auto;
+list-style-type:none;
+}
+.new-entry-link{
+margin:0.5em 0 1em 10em;
+}
+.login-form-title{
+text-align:center;
+}
+.logout-page{
+margin:5em 10em;
+}
+.topic-list{
+margin-left:5em;
+}
+.page-title::after{
+content:"";
+display:block;
+border-bottom:1px solid #2097d1;
+width:30%;
+margin-left:1.5em;
+padding:5px;
+}
+.time{
+border-bottom:1px solid #2097d1;
+padding:0.5em;
+}
+.intro{
+max-width:50%;
+margin:1em 1em 0em 5em;
+line-height: 2em;
+
+}
+.entry-list p{
+padding:1em;
+}
+.error-msgs, ul.errorlist{
+list-style-type:none;
+color:red;
+text-align:center;
+}
+.helptext{
+display:none;
+}
+.register ul li{
+display:none;
+}
+.register{
+height:auto
+}
