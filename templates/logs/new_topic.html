@@ -1,10 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{%static '/css/main.css'%}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a topic</title>
 </head>
 <body>
-$END$
+{%block content%}
+<a href="{% url 'logs:topics'%}">back</a>
+<section class="form-container">
+
+    <div class="form-title">
+        <p>Add  a new topic</p>
+    </div>
+
+    <form action="{% url 'logs:new_topic'%}" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class="submit-btn" name="submit">
+            <span>Add Topic</span>
+        </button>
+    </form>
+
+</section>
+
+{%endblock content%}
 </body>
 </html>

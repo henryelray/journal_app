@@ -6,18 +6,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>{{topic}}</title>
 </head>
 
 <body>
 {%block content%}
     <p class="page-title">{{topic}}</p>
-    <ul>
+    <a href="{% url 'logs:new_entry' topic.id%}" class="new-entry-link">New entry</a>
+    <ul class="entry-list">
         {% for entry in entries%}
         <li>
-            <p>{{entry.date_added}}</p>
-            <p>{{entry.text | linebreaks}}</p>
+            <div class="time">{{entry.date_added}}
+                <a href="{%url 'logs:edit_entry' entry.id%}">Edit entry</a>
+                <a href="{%url 'logs:delete_entry' entry.id%}">delete entry</a>
+            </div>
+
+            {{entry.text | linebreaks}}
         </li>
         {%empty%}
         <li>
@@ -26,6 +30,7 @@
         {%endfor%}
 
     </ul>
+
 
 {%endblock content%}
 </body>

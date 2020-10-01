@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All topics</title>
 </head>
+{% extends 'logs/base.html'%}
 <body>
-
+{%block content%}
     <section class="topics">
 
-        <h1 class="page-title">Topics</h1>
+        <p class="page-title">Topics</p>
 
-        <ul>
+        <ul class="topic-list">
             {% for topic in topics%}
                 <li>
                     <a href="{% url 'logs:topic' topic.id%}">{{topic}}</a>
@@ -23,8 +24,9 @@
             {%endfor%}
 
         </ul>
-        <a href="">+ new topic</a>
+        <a class="new-entry-link" href="{%url 'logs:new_topic'%}">+ new topic</a>
 
     </section>
+{%endblock content%}
 </body>
 </html>

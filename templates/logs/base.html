@@ -13,9 +13,14 @@
     <nav class="nav-container">
         <ul>
             <li><a href="{% url 'logs:index'%}">Learning log</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="">Hi,{{user.username}}</a></li>
             <li><a href="{% url 'logs:topics'%}">Topics</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Sign Up</a></li>
+            <li><a href="{% url 'users:logout'%}">Logout</a></li>
+            {%else%}
+            <li><a href="{% url 'users:login'%}">Login</a></li>
+            <li><a href="{% url 'users:register'%}">Sign Up</a></li>
+            {%endif%}
         </ul>
     </nav>
 

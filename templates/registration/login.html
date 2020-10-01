@@ -1,10 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+{%extends 'logs/base.html'%}
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css'%}">
+    <title>Document</title>
 </head>
+
 <body>
-$END$
+{%block content%}
+<p class="page-title">Login to your account</p>
+{%if form.errors%}
+    <p class="error-msgs">Your username and password does not match.</p>
+{%endif%}
+<section class="form-container">
+    <form method="post" action="{%url 'users:login'%}">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button name="submit" class="submit-btn">Log In</button>
+        <input type="hidden" name="next" value="{%url 'logs:index'%}">
+  </form>
+</section>
+
+{%endblock content%}
 </body>
 </html>

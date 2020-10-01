@@ -1,10 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{%static '/css/main.css'%}">
+    <title>Add an entry</title>
 </head>
 <body>
-$END$
+{%block content%}
+<a href="{% url 'logs:topic' topic.id%}">back</a>
+
+<section class="entry-form">
+
+    <div class="form-title">
+        <p>New entry</p>
+    </div>
+
+    <form action="{% url 'logs:new_entry' topic.id%}" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class="submit-btn" name="submit">
+            <span>Add entry</span>
+        </button>
+    </form>
+
+</section>
+
+
+{%endblock content%}
 </body>
 </html>
