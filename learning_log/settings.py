@@ -31,14 +31,11 @@ environ.Env.read_env()
 # False if not in os.environ
 DEBUG = env('DEBUG')
 
-# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
-SECRET_KEY = env('SECRET_KEY')
-
 
 SECRET_KEY = os.environ.get('SECRET_KEY','%mh&wvowp3)(jqhstz0e5iv7a@_v9)xttag7z)n015h9n7^bt0')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['shrouded-harbor-96166.herokuapp.com','127.0.0.1']
