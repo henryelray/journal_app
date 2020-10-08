@@ -21,16 +21,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 import environ
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY =
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env()
 
-# env = environ.Env(
-#
-#     # set casting, default value
-#     DEBUG=(bool, False)
-# )
-# # reading .env file
-# environ.Env.read_env()
+# False if not in os.environ
+DEBUG = env('DEBUG')
+
+# Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
+SECRET_KEY = env('SECRET_KEY')
+
 
 SECRET_KEY = os.environ.get('SECRET_KEY','%mh&wvowp3)(jqhstz0e5iv7a@_v9)xttag7z)n015h9n7^bt0')
 
