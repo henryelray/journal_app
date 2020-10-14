@@ -143,7 +143,7 @@ STATICFILES_DIRS = [
 
 
 LOGIN_URL = 'users:login'
-
+LOGOUT_REDIRECT_URL = 'logs:index'
 # heroku settings
 import django_heroku
 django_heroku.settings(locals())
